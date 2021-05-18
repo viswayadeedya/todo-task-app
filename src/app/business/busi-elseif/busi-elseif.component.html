@@ -1,0 +1,5 @@
+<app-add
+  *ngFor="let li of lists; let i = index"
+  [list]="li"
+  (click)="onRemove(i)"
+></app-add>

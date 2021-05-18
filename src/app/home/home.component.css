@@ -1,0 +1,75 @@
+.mobile {
+  position: relative;
+  width: 300px;
+  height: 650px;
+  background-color: #f4f6fd;
+  border-radius: 40px;
+  margin-top: 25px;
+  border: 5px solid black;
+  /* border: 20px; */
+}
+
+.toggle-btn span {
+  position: relative;
+  top: 40px;
+  left: 30px;
+  display: block;
+  width: 17px;
+  height: 2px;
+  background-color: #9d9ab4;
+  margin: 5px 0px;
+}
+.toggle-btn .search {
+  color: #9d9ab4;
+  position: relative;
+  top: 20px;
+  left: 220px;
+}
+.toggle-btn .bell {
+  color: #9d9ab4;
+  position: relative;
+  top: 20px;
+  left: 240px;
+}
+.user-name {
+  position: relative;
+  top: 35px;
+  left: 30px;
+}
+.categories {
+  position: relative;
+  top: 40px;
+  left: 30px;
+  color: #9d9ab4;
+}
+.today-task {
+  color: #9d9ab4;
+  position: relative;
+  top: 65px;
+  left: 30px;
+  font-size: 11px;
+}
+.todo-list {
+  position: relative;
+  top: 60px;
+}
+.add-business {
+  position: relative;
+  top: 70px;
+  left: 30px;
+}
+
+.camera {
+  width: 100px;
+  height: 15px;
+  background-color: black;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  left: 100px;
+  top: -2px;
+}
+.task-add {
+  position: relative;
+  top: -100px;
+  left: 30px;
+}
