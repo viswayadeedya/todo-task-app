@@ -1,55 +1,51 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //------Components -----
 import { AppComponent } from './app.component';
-import { NewItemComponent } from './business/new-item/new-item.component';
-import { HomeComponent } from './home/home.component';
-// *** Related to Business Tasks ***
-import { AddComponent } from './business/add/add.component';
-import { RectBusiComponent } from './business/rect-busi/rect-busi.component';
-import { BusiElseifComponent } from './business/busi-elseif/busi-elseif.component';
-//***  Related to personal Tasks ***
-import { PersonalListComponent } from './personal/personal-list/personal-list.component';
-import { RectPersComponent } from './personal/rect-pers/rect-pers.component';
-import { PersElseifComponent } from './personal/pers-elseif/pers-elseif.component';
-import { NewItemPersonalComponent } from './personal/new-item-personal/new-item-personal.component';
-import { CircleBusiComponent } from './business/circle-busi/circle-busi.component';
-import { CirclePersComponent } from './personal/circle-pers/circle-pers.component';
+import { LoginComponent } from './login/login.component';
+import { ListComponent } from './list/list.component';
+import { SharedListComponent } from './list/sharedlist/sharedlist.component';
+import { SharedListItemComponent } from './list/sharedlist/shared-list-item/shared-list-item.component';
+import { AuthInterceptorService } from './login/auth-interceptor.service';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'addnewitembusiness', component: NewItemComponent },
-  { path: 'addnewitempersonal', component: NewItemPersonalComponent },
-];
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AddComponent,
-    PersonalListComponent,
-    RectBusiComponent,
-    RectPersComponent,
-    BusiElseifComponent,
-    PersElseifComponent,
-    NewItemComponent,
-    NewItemPersonalComponent,
-    CircleBusiComponent,
-    CirclePersComponent,
+    LoginComponent,
+    ListComponent,
+    SharedListComponent,
+    SharedListItemComponent,
   ],
   imports: [
-    BrowserModule,
+    NgbModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule,
-    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    BrowserModule,
+    PasswordModule,
+    InputTextModule,
+    SidebarModule,
+    ButtonModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
