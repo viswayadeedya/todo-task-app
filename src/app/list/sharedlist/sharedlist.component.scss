@@ -1,0 +1,44 @@
+.container {
+  margin-top: 30px;
+  padding: 0 100px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.bussiness-text {
+  text-transform: uppercase;
+  color: rgb(95, 143, 0);
+  padding: 20px 80px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+.line {
+  background-color: rgba(95, 143, 0, 0.548);
+  padding: 1px;
+}
+
+.btn {
+  text-align: center;
+}
+.btn-addwork {
+  margin: 10px 0 20px 0;
+}
+.btn-cancel {
+  margin: 10px 10px 20px 0;
+}
+
+.text-newitem {
+  margin: 10px;
+  height: 30px;
+}
+.circle {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #689f38;
+}
+.circle:active {
+  transform: scale(1.2);
+}
+.btn-submit {
+  border: none;
+}

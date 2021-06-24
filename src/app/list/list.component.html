@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="p-d-flex p-jc-between">
+    <div>
+      <h4 (click)="visibleSidebar1 = true" class="text-tasklist">Task List</h4>
+      <a
+        class="header__btn"
+        routerLinkActive="active"
+        routerLink="/list/personal"
+        (click)="onClick('personal')"
+      >
+        Personal List</a
+      >
+      <a
+        class="header__btn"
+        routerLinkActive="active"
+        routerLink="/list/bussiness"
+        (click)="onClick('bussiness')"
+        >Bussiness List</a
+      >
+    </div>
+    <a class="header__btn text-logout" (click)="onLogout()">Logout</a>
+  </div>
+</header>
+<div class="p-d-flex p-jc-center">
+  <app-sharedlist [selectedListName]="selectedList"></app-sharedlist>
+</div>
+
+<div *ngIf="selectedList === 'bussiness'">
+  <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="1000">
+    <h3 class="sidebar" (click)="onSaveBussiness()">Save Data</h3>
+    <hr class="line" />
+    <h3 class="sidebar" (click)="onFetch()">Fetch Data</h3>
+  </p-sidebar>
+</div>
+<div *ngIf="selectedList === 'personal'">
+  <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="1000">
+    <h3 class="sidebar" (click)="onSavePersonal()">Save Data</h3>
+    <hr class="line" />
+    <h3 class="sidebar" (click)="onFetch()">Fetch Data</h3>
+  </p-sidebar>
+</div>

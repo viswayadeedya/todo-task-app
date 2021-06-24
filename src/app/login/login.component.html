@@ -1,0 +1,79 @@
+<header class="header">
+  <div class="p-d-flex p-jc-between">
+    <div>
+      <h4 class="header__text-tasklist">Task List</h4>
+    </div>
+    <div class="header__text-btn">
+      <a class="header__btn" routerLink="/auth" (click)="onClickLogin()"
+        >Login</a
+      >
+      <a class="header__btn" routerLink="/auth" (click)="onClickSignup()"
+        >Sign Up</a
+      >
+    </div>
+  </div>
+</header>
+
+<div class="p-d-flex p-jc-center p-ai-center container">
+  <div class="container__login">
+    <div class="todo-text">todo list</div>
+    <hr />
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="login-form">
+      <h5>Email ID</h5>
+      <input
+        required
+        email
+        type="email"
+        size="30"
+        pInputText
+        name="email"
+        ngModel
+      />
+      <div
+        class="danger"
+        *ngIf="
+          error === 'This email exists already' ||
+          error === 'Email ID doesnot exist please create one'
+        "
+      >
+        *{{ error }}!
+      </div>
+      <h5>Password</h5>
+
+      <input
+        required="true"
+        minlength="5"
+        style="width: 100%"
+        type="password"
+        pPassword
+        name="password"
+        ngModel
+      />
+      <div class="danger" *ngIf="error === 'Incorrect Password'">
+        *{{ error }}!
+      </div>
+      <div *ngIf="login" class="form-btn">
+        <button
+          [disabled]="!form.valid"
+          pButton
+          type="submit"
+          label="Log In"
+          class="btn p-button-rounded"
+        ></button>
+      </div>
+      <div *ngIf="!login" class="form-btn">
+        <button
+          [disabled]="!form.valid"
+          pButton
+          type="submit"
+          label="Sign Up"
+          class="btn p-button-rounded"
+        ></button>
+      </div>
+    </form>
+
+    <div style="text-align: center" *ngIf="isLoading">
+      <i class="pi pi-spin pi-spinner spin"></i>
+    </div>
+  </div>
+</div>
