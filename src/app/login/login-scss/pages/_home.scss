@@ -1,11 +1,3 @@
-.header {
-  background-color: $color-darkgreen;
-  padding: $value-10px;
-  &__btn {
-    padding: 0 15px 0 15px;
-  }
-}
-
 .container {
   height: 94.6%;
   &__login {
@@ -29,10 +21,4 @@
 .spin {
   font-size: 2rem;
   color: $color-yellowgreen;
-}
-.danger {
-  text-align: left;
-  padding-bottom: 10px;
-  color: maroon;
-  font-size: 1rem;
 }
