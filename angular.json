@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "f4daf6b1-8401-45bb-92f2-833d2c06faf4"
+    "analytics": "5eb2e320-24a4-47ff-b040-c69ab850aeb8"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -9,6 +9,9 @@
     "todo-list": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -25,10 +28,21 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
-            "scripts": []
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/primeflex/primeflex.css",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -85,7 +99,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": ["src/scss/styles.scss"],
             "scripts": []
           }
         },

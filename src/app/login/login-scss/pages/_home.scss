@@ -1,0 +1,25 @@
+// VISWA YADEEDYA
+.container {
+  height: 94.6%;
+  &__login {
+    background-color: $color-white;
+    border-radius: $value-10px;
+  }
+}
+
+.login-form {
+  padding: 30px 80px 50px 80px;
+}
+
+.todo-text {
+  padding-top: $value-10px;
+  background-image: linear-gradient(
+    to right,
+    $color-yellowgreen,
+    $color-darkgreen
+  );
+}
+.spin {
+  font-size: 2rem;
+  color: $color-yellowgreen;
+}

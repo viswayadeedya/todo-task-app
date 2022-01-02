@@ -1,0 +1,28 @@
+// VISWA YADEEDYA
+.display {
+  display: inline-block;
+}
+.todo-list-text {
+  padding: 3px 0 3px 10px;
+  color: rgb(95, 143, 0);
+  border: 1px solid #689f38;
+  margin: 10px;
+  width: 335px;
+  cursor: pointer;
+}
+.todo-list-textactive {
+  padding: 3px 0 3px 10px;
+  color: rgb(95, 143, 0);
+  border: 1px solid #689f38;
+  width: 303px;
+  margin: 10px;
+
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.103);
+  text-decoration: line-through;
+}
+.trash-icon {
+  color: orangered;
+  cursor: pointer;
+  font-size: 1rem;
+}

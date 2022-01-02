@@ -1,0 +1,58 @@
+<!-- VISWA YADEEDYA -->
+<div class="container">
+  <div class="bussiness-text">{{ selectedListName }} List</div>
+  <hr class="line" />
+  <div *ngIf="selectedListName === 'bussiness'">
+    <app-shared-list-item
+      *ngFor="let item of sharedList; let i = index"
+      [bussinessList]="item"
+      [name]="'bussiness'"
+      [id]="i"
+    ></app-shared-list-item>
+  </div>
+
+  <div *ngIf="selectedListName === 'personal'">
+    <app-shared-list-item
+      [name]="'personal'"
+      *ngFor="let item of sharedList; let i = index"
+      [bussinessList]="item"
+      [id]="i"
+    ></app-shared-list-item>
+  </div>
+
+  <div *ngIf="addNewTask">
+    <form (ngSubmit)="onAdd(f)" #f="ngForm">
+      <input
+        required
+        class="text-newitem"
+        type="email"
+        size="35"
+        placeholder="Enter new task"
+        pInputText
+        name="newTask"
+        ngModel
+      />
+      <button class="btn-submit" [disabled]="!f.valid" type="submit">
+        <i class="pi circle pi-plus-circle"></i>
+      </button>
+    </form>
+  </div>
+  <div class="btn">
+    <button
+      *ngIf="addNewTask"
+      (click)="onClickCancel()"
+      pButton
+      type="button"
+      label="Cancel"
+      class="btn-cancel p-button-outlined p-button-danger"
+    ></button>
+    <button
+      [disabled]="addNewTask"
+      (click)="onClickAdd()"
+      pButton
+      type="button"
+      label="Add work"
+      class="btn-addwork p-button-outlined p-button-success"
+    ></button>
+  </div>
+</div>
