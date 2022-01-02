@@ -1,3 +1,4 @@
+// VISWA YADEEDYA
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { PasswordModule } from 'primeng/password';
     InputTextModule,
     SidebarModule,
     ButtonModule,
+    ProgressSpinnerModule,
     BrowserAnimationsModule,
   ],
   providers: [

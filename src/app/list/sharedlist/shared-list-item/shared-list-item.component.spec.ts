@@ -1,3 +1,4 @@
+// VISWA YADEEDYA
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SharedListItemComponent } from './shared-list-item.component';
@@ -8,9 +9,8 @@ describe('SharedListItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SharedListItemComponent ]
-    })
-    .compileComponents();
+      declarations: [SharedListItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

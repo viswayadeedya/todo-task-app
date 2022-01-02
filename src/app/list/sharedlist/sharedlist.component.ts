@@ -1,3 +1,4 @@
+// VISWA YADEEDYA
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ListTaskName } from '../list.task.model';
@@ -16,6 +17,8 @@ export class SharedListComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.sharedList = this.listService.getBussinessList();
+    this.listService.fetchBussinessList().subscribe();
+    this.listService.fetchPersonalList().subscribe();
   }
 
   ngOnChanges() {

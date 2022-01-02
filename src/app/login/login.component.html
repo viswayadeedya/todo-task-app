@@ -1,15 +1,16 @@
+<!-- VISWA YADEEDYA -->
 <header class="header">
   <div class="p-d-flex p-jc-between">
     <div>
-      <h4 class="header__text-tasklist">Task List</h4>
+      <h4 class="header__text-tasklist">&nbsp;&nbsp;Task List</h4>
     </div>
     <div class="header__text-btn">
       <a class="header__btn" routerLink="/auth" (click)="onClickLogin()"
         >Login</a
-      >
+      >&nbsp;
       <a class="header__btn" routerLink="/auth" (click)="onClickSignup()"
         >Sign Up</a
-      >
+      >&nbsp;&nbsp;
     </div>
   </div>
 </header>
@@ -38,6 +39,14 @@
       >
         *{{ error }}!
       </div>
+      <div
+        *ngIf="
+          error !== 'This email exists already' &&
+          error !== 'Email ID doesnot exist please create one'
+        "
+      >
+        &nbsp;
+      </div>
       <h5>Password</h5>
 
       <input
@@ -52,6 +61,7 @@
       <div class="danger" *ngIf="error === 'Incorrect Password'">
         *{{ error }}!
       </div>
+      <div *ngIf="error !== 'Incorrect Password'">&nbsp;</div>
       <div *ngIf="login" class="form-btn">
         <button
           [disabled]="!form.valid"
@@ -74,6 +84,7 @@
 
     <div style="text-align: center" *ngIf="isLoading">
       <i class="pi pi-spin pi-spinner spin"></i>
+      <!-- <p-progressSpinner></p-progressSpinner> -->
     </div>
   </div>
 </div>

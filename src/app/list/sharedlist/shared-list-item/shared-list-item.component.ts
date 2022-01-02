@@ -1,3 +1,4 @@
+// VISWA YADEEDYA
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ListTaskName } from '../../list.task.model';
@@ -15,7 +16,10 @@ export class SharedListItemComponent implements OnInit {
   status: boolean = false;
   constructor(private route: ActivatedRoute, private list: TodolistService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.list.fetchBussinessList().subscribe();
+    this.list.fetchPersonalList().subscribe();
+  }
   onClick() {
     this.status = !this.status;
   }
