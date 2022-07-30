@@ -29,13 +29,13 @@ export class ListComponent implements OnInit {
   }
 
   onSavePersonal() {
-    this.listService.savePersonalList();
+    // this.listService.savePersonalList();
   }
   onFetch() {
     this.listService.fetchPersonalList().subscribe();
     this.listService.fetchBussinessList().subscribe();
   }
   onSaveBussiness() {
-    this.listService.saveBussinessList();
+    // this.listService.saveBussinessList();
   }
 }

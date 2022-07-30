@@ -5,7 +5,7 @@
     (click)="onClick()"
     [ngClass]="status ? 'todo-list-textactive' : 'todo-list-text'"
   >
-    {{ bussinessList.taskname }}
+    {{ bussinessList.taskName }}
   </div>
   <div *ngIf="status" class="display">
     <i (click)="onDelete(id)" class="pi pi-trash trash-icon"></i>

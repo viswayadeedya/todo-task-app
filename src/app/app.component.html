@@ -1,2 +1,12 @@
 <!-- VISWA YADEEDYA -->
-<router-outlet></router-outlet>
+<div>
+  <div *ngIf="loaderFlag" class="backdrop">
+    <div class="loading-spinner-position">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

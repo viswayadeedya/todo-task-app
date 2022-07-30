@@ -6,24 +6,25 @@
 }
 .header__btn {
   text-decoration: none;
-  color: #fff;
-  padding: 0 15px;
+  color: #8f3000;
+  padding: 0 10px;
   cursor: pointer;
 }
 .header__btn:hover {
-  text-decoration: underline;
+  font-size: 20px;
 }
 .text-logout {
   margin-top: 13px;
 }
 .text-tasklist {
-  cursor: pointer;
   display: inline;
-  color: rgba(255, 255, 255, 0.678);
+  color: #8f3000;
   font-size: 30px;
 }
 .active {
-  color: rgb(224, 224, 224);
+  color: #8f3000;
+  padding-bottom: 3px;
+  border-bottom: #fff solid 2px;
 }
 .sidebar {
   cursor: pointer;

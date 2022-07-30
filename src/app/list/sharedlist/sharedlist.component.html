@@ -4,17 +4,18 @@
   <hr class="line" />
   <div *ngIf="selectedListName === 'bussiness'">
     <app-shared-list-item
-      *ngFor="let item of sharedList; let i = index"
+      *ngFor="let item of bussinessList; let i = index"
       [bussinessList]="item"
       [name]="'bussiness'"
       [id]="i"
+      (deleteBussinessListItem)="deleteBussinessListItem(i)"
     ></app-shared-list-item>
   </div>
 
   <div *ngIf="selectedListName === 'personal'">
     <app-shared-list-item
       [name]="'personal'"
-      *ngFor="let item of sharedList; let i = index"
+      *ngFor="let item of personalList; let i = index"
       [bussinessList]="item"
       [id]="i"
     ></app-shared-list-item>

@@ -1,5 +1,5 @@
 // VISWA YADEEDYA
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ListTaskName } from '../../list.task.model';
 import { TodolistService } from '../../shared-service/todolist.service';
@@ -13,6 +13,7 @@ export class SharedListItemComponent implements OnInit {
   @Input() bussinessList: ListTaskName;
   @Input() id: number;
   @Input() name: string;
+  @Output() deleteBussinessListItem = new EventEmitter<number>();
   status: boolean = false;
   constructor(private route: ActivatedRoute, private list: TodolistService) {}
 
@@ -25,10 +26,10 @@ export class SharedListItemComponent implements OnInit {
   }
   onDelete(index: number) {
     if (this.name === 'bussiness') {
-      this.list.deleteBussinessListItem(index);
+      this.deleteBussinessListItem.emit(index);
     }
     if (this.name === 'personal') {
-      this.list.deletePersonalListItem(index);
+      // this.list.deletePersonalListItem(index);
     }
   }
 }

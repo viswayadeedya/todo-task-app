@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { TodolistService } from '../list/shared-service/todolist.service';
 import { AuthResponseData, AuthService } from './auth.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class LoginComponent implements OnInit {
   login: boolean = true;
   isLoading: boolean = false;
   error: string = null;
-  constructor(private authService: AuthService, private route: Router) {}
+  constructor(
+    private authService: AuthService,
+    private listService: TodolistService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -30,7 +35,7 @@ export class LoginComponent implements OnInit {
     }
     const email = form.value.email;
     const password = form.value.password;
-    this.isLoading = true;
+    this.listService.syncLoader(true);
     let authObs: Observable<AuthResponseData>;
 
     if (!this.login) {
@@ -40,14 +45,13 @@ export class LoginComponent implements OnInit {
     }
 
     authObs.subscribe(
-      (resData) => {
-        console.log(resData);
-        this.isLoading = false;
+      () => {
+        this.listService.syncLoader(false);
         this.route.navigate(['/list/bussiness']);
       },
       (errorMes) => {
+        this.listService.syncLoader(false);
         this.error = errorMes;
-        this.isLoading = false;
       }
     );
 
